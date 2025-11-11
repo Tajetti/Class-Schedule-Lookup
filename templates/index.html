@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Agenda de Salas e Horários</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Agenda de Salas e Horários</h1>
+
+  <div class="container">
+    <label>Dia da Semana:</label>
+    <select id="dia">
+      <option value="segunda">Segunda</option>
+      <option value="terca">Terça</option>
+      <option value="quarta">Quarta</option>
+      <option value="quinta">Quinta</option>
+      <option value="sexta">Sexta</option>
+    </select>
+
+    <label>Hora:</label>
+    <select id="hora">
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+    </select>
+
+    <button id="consultar">Consultar Salas Livres</button>
+
+    <h2>Resultado:</h2>
+    <ul id="resultado"></ul>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
