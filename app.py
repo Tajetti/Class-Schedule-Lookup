@@ -4,14 +4,12 @@ from pyswip import Prolog
 app = Flask(__name__)
 prolog = Prolog()
 
-# Carrega o arquivo de regras Prolog
 prolog.consult("regras.pl")
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Endpoint principal -> /salas-livres?dia=segunda&hora=19
 @app.route('/salas-livres')
 def salas_livres():
     dia = request.args.get('dia')
