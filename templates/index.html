@@ -1,37 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Agenda de Salas e Horários</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Agenda de Salas e Horários</h1>
+  <header class="topbar">
+    <div class="brand">
+      <strong>Agenda</strong> de Salas
+    </div>
+    <div class="subtitle">Consulte disponibilidade, capacidade e aulas</div>
+  </header>
 
-  <div class="container">
-    <label>Dia da Semana:</label>
-    <select id="dia">
-      <option value="segunda">Segunda</option>
-      <option value="terca">Terça</option>
-      <option value="quarta">Quarta</option>
-      <option value="quinta">Quinta</option>
-      <option value="sexta">Sexta</option>
-    </select>
+  <main class="wrap">
+    <section class="controls">
+      <div class="card">
+        <h3>Buscar salas livres</h3>
+        <div class="row">
+          <label>Dia</label>
+          <select id="dia">
+            <option value="segunda">Segunda</option>
+            <option value="terca">Terça</option>
+            <option value="quarta">Quarta</option>
+            <option value="quinta">Quinta</option>
+            <option value="sexta">Sexta</option>
+          </select>
+        </div>
 
-    <label>Hora:</label>
-    <select id="hora">
-      <option value="18">18</option>
-      <option value="19">19</option>
-      <option value="20">20</option>
-      <option value="21">21</option>
-      <option value="22">22</option>
-    </select>
+        <div class="row">
+          <label>Hora</label>
+          <select id="hora">
+            <option value="18">18:00</option>
+            <option value="19">19:00</option>
+            <option value="20">20:00</option>
+            <option value="21">21:00</option>
+            <option value="22">22:00</option>
+          </select>
+        </div>
 
-    <button id="consultar">Consultar Salas Livres</button>
+        <div class="row actions">
+          <button id="consultar" class="btn primary">Consultar</button>
+        </div>
+      </div>
 
-    <h2>Resultado:</h2>
-    <ul id="resultado"></ul>
-  </div>
+      <div class="card">
+        <h3>Informações da sala</h3>
+        <div class="row">
+          <label for="sala">Sala (ex: lab1)</label>
+          <input id="sala" type="text" placeholder="lab1" />
+        </div>
+
+        <div class="row actions">
+          <button id="consultar-capacidade" class="btn">Capacidade</button>
+          <button id="verificar-ocupada" class="btn">Verificar ocupação</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Aulas por dia</h3>
+        <div class="row">
+          <label>Dia</label>
+          <select id="dia-aulas">
+            <option value="segunda">Segunda</option>
+            <option value="terca">Terça</option>
+            <option value="quarta">Quarta</option>
+            <option value="quinta">Quinta</option>
+            <option value="sexta">Sexta</option>
+          </select>
+        </div>
+
+        <div class="row actions">
+          <button id="listar-aulas" class="btn">Listar aulas</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="resultado-card">
+      <h2>Resultado</h2>
+      <ul id="resultado" class="resultado-list"></ul>
+      <div class="hint">Dica: preencha a sala para consultas de capacidade/ocupação.</div>
+    </aside>
+  </main>
+
+  <footer class="foot">Rodando localmente — atualize a página após alterações</footer>
 
   <script src="/static/script.js"></script>
 </body>
