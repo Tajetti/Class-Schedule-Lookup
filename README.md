@@ -55,3 +55,12 @@ Por padrão o servidor roda em http://127.0.0.1:5050/
   curl "http://127.0.0.1:5050/aulas-do-dia?dia=terca"
 
 A interface em templates/index.html também usa esses endpoints via fetch.
+
+## Explicação simples de como funciona
+
+- O projeto tem três partes principais: a página que você vê no navegador, o servidor em Python e as regras em Prolog.
+- Quando alguém pede uma informação (por exemplo, "quais salas estão livres?"), a página envia esse pedido ao servidor.
+- O servidor recebe o pedido e pergunta para o arquivo de regras (regras.pl) — ele não decide sozinho, apenas consulta as regras definidas.
+- O Prolog verifica as regras e responde com as salas/horários encontradas.
+- O servidor pega essa resposta e devolve para a página, que mostra o resultado para o usuário.
+- Para mudar como o sistema funciona (horários, nomes de salas, disciplinas), basta editar o arquivo regras.pl; para mudar a apresentação, edite templates/static.
